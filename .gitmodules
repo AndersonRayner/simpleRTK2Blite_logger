@@ -1,0 +1,3 @@
+[submodule "Software/OpenLog"]
+	path = Software/OpenLog
+	url = https://github.com/sparkfun/OpenLog.git
