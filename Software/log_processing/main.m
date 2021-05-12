@@ -3,17 +3,10 @@ clear all
 clc
 fclose('all');
 
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-02-25_Home';  % Static Test
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-03-01_Caltech';  % Going for a walk to COVID testing
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-03-08_Home'; % Going around the block
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-03-14_Home'; % Going around the block
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-03-15_Home'; % Sitting on the porch
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-03-16_North_Field\data'; % Flight testing at North Field
-root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-03-18_North_Field\data\raw_GPS_observations\flight_1'; % Flights with RADAR
 root_dir = 'C:\Users\matt\OneDrive - California Institute of Technology\Projects\DARTS\Field Tests\2021-05-03_North_Field\data\gps_logs';
 
 input_file_Rover = fullfile(root_dir,'ROVER.TXT');
-input_file_Base  = fullfile(root_dir,'BASE.TXT');
+input_file_Base  = fullfile(root_dir,'BASE.TXT');  % BASE.TXT
 
 output_dir       = fullfile(root_dir,'outputs');
 images_dir       = fullfile(root_dir,'images');
@@ -183,114 +176,6 @@ fprintf('\t     HOME: ( %12.7f, %12.7f,%8.3f )\n',34.1420060,-118.1302375,207.03
 
 
 return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% % Colourmap
-% RTK_colours = zeros(numel(ROVER_RTK.fix),3);
-% for ii = 1:numel(ROVER_RTK.fix)
-%     if (ROVER_RTK.fix(ii) == 0); RTK_colours(ii,:) = [0,0,0]; end % None
-%     if (ROVER_RTK.fix(ii) == 1); RTK_colours(ii,:) = [1,0,0]; end % Single
-%     if (ROVER_RTK.fix(ii) == 2); RTK_colours(ii,:) = [1,1,0]; end % DGPS
-%                                                                   % 3 doesn't exist
-%     if (ROVER_RTK.fix(ii) == 4); RTK_colours(ii,:) = [0,0,1]; end % RTK-Fixed
-%     if (ROVER_RTK.fix(ii) == 5); RTK_colours(ii,:) = [0,1,0]; end % RTK-Float
-% end
-%
-% PPK_colours = zeros(numel(ROVER_PPK.fix),3);
-% for ii = 1:numel(ROVER_PPK.fix)
-%     if (ROVER_PPK.fix(ii) == 1); PPK_colours(ii,:) = [1,0,0]; end % Single
-%     if (ROVER_PPK.fix(ii) == 5); PPK_colours(ii,:) = [0,1,0]; end % Float
-%     if (ROVER_PPK.fix(ii) == 4); PPK_colours(ii,:) = [0,0,1]; end % Fixed
-% end
-%
-% figure(6); clf; hold all; grid on; grid minor; set(gcf,'name','Fix Type Map'); ...
-%     plot(ROVER_RTK.E,ROVER_RTK.N,'-','color',[0.8,0.8,0.8]); ...
-%     plot(ROVER_PPK.E,ROVER_PPK.N,'-','color',[0.8,0.8,0.8]); ...
-%     scatter(ROVER_RTK.E,ROVER_RTK.N,[],RTK_colours); ...
-%     scatter(ROVER_PPK.E,ROVER_PPK.N,[],PPK_colours); ...
-%     xlabel('East [ m ]'); ylabel('North [ m ]');
-
-% figure(7); clf; hold all; set(gcf,'name','PPK Analysis');
-% subplot(2,2,1); hold all; grid on; grid minor; ...
-%     plot(ROVER_PPK.t,ROVER_PPK.N); ...
-%     plot(ROVER_PPK.t,ROVER_PPK.N+ROVER_PPK.sdN*2,'-','color',[0.8,0.8,0.8]); ...
-%     plot(ROVER_PPK.t,ROVER_PPK.N-ROVER_PPK.sdN*2,'-','color',[0.8,0.8,0.8]); ...
-%     xlabel('Time [ s ]'); ylabel('Position N [ m ]');
-% subplot(2,2,3); hold all; grid on; grid minor; ...
-%     plot(ROVER_PPK.t,ROVER_PPK.E); ...
-%     plot(ROVER_PPK.t,ROVER_PPK.E+ROVER_PPK.sdE*2,'-','color',[0.8,0.8,0.8]); ...
-%     plot(ROVER_PPK.t,ROVER_PPK.E-ROVER_PPK.sdE*2,'-','color',[0.8,0.8,0.8]); ...
-%     xlabel('Time [ s ]'); ylabel('Position E [ m ]');
-% subplot(2,2,2); hold all; grid on; grid minor; ...
-%     plot(ROVER_PPK.t,ROVER_PPK.U); ...
-%     plot(ROVER_PPK.t,ROVER_PPK.U+ROVER_PPK.sdU*2,'-','color',[0.8,0.8,0.8]); ...
-%     plot(ROVER_PPK.t,ROVER_PPK.U-ROVER_PPK.sdU*2,'-','color',[0.8,0.8,0.8]); ...
-%     xlabel('Time [ s ]'); ylabel('Position U [ m ]');
-% subplot(2,2,4); hold all; grid on; grid minor; ...
-%     plot(ROVER_PPK.t,ROVER_PPK.fix); ...
-%     yticks([0:5]); yticklabels({'None','Single','DGPS','-','RTK-Fixed','RTK-Float'}); ...
-%     ylabel('Fix Type [ - ]'); xlabel('Time [ s ]');
-
-
-
-% Calculate spread of keeping GPS in one spot
-locs = find(fix == 4);  % Only take the fixed integer solutions
-locs = find(fix > 0);
-
-dist = sqrt((XE(locs)-mean(XE(locs))).^2 + (YE(locs)-mean(YE(locs))).^2);
-
-
-
-% Distribution
-% Comparison at https://www.ardusimple.com/testing-simplertk2b-accuracy-in-rtk-base-rover-configuration/
-figure(5); clf; set(gcf,'name','Local Position Estimate Histogram');
-subplot(1,3,1); hold all; grid on; grid minor; ...
-    title(sprintf('Standard Deviation (North): %.3f [ m ]\nStandard Deviation (East): %.3f [ m ]',std(YE(locs)),std(XE(locs))));
-histogram(YE(locs) - mean(YE(locs)),'displayName','North'); ...
-    histogram(XE(locs) - mean(XE(locs)),'displayName','East'); ...
-    legend show; box off; ...
-    xlabel('Distance from Mean [ m ]'); ylabel('Num Elements [ - ]');
-subplot(1,3,2); hold all; grid on; grid minor; ...
-    histogram(dist,'displayName','2D');
-legend show; box off; ...
-    xlabel('Distance from Mean [ m ]'); ylabel('Num Elements [ - ]');
-
-subplot(1,3,3); hold all; grid on; grid minor; ...
-    title(sprintf('Standard Deviation (Altitude): %.3f [ m ]',std(altE(locs))));
-histogram(altE(locs) - mean(altE(locs)),'displayName','Alt'); ...
-    legend show; box off; ...
-    xlabel('Altitude from Mean [ m ]'); ylabel('Num Elements [ - ]');
-
-
-
-return
-
-
-
-
-
 
 
 
