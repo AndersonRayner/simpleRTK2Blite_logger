@@ -5,7 +5,7 @@ Features:
 - 5-36 V Input (XT30 Connector) 
 - Logging to SD Card
 
-![SimpleRTK2Blite Board](./Images/SimpleRTK2Blite_logger.png "SimpleRTK2Blite Logger Board")
+![SimpleRTK2Blite Board](./Images/featured.png "SimpleRTK2Blite Logger Board")
 
 ## Hardware
 
