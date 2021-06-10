@@ -2,6 +2,9 @@ function [rinex_obs,rinex_nav] = extractRINEX(input_file,output_dir,rtklib_path)
 %% Convert file to RINEX
 % from http://www.rtklib.com/prog/manual_2.4.2.pdf and http://rtkexplorer.com/downloads/rtklib-code/
 
+% This script is used to convert data recorded as ubx logs to RINEX via commandline using rtkconv.  
+% Basically much faster than doing it through the rtkconv GUI each time and makes life easier
+
 % Start Stuff
 [DIR,FILE,EXT] = fileparts(input_file);
 fprintf('Converting %s.%s to RINEX\n',FILE,EXT);
