@@ -1,3 +1,5 @@
 (fp_lib_table
-  (lib (name ARCL)(type KiCad)(uri C:/Users/matt/Documents/AFA/PCBs/lib/kicad/footprints/ARCL.pretty)(options "")(descr ""))
+  (lib (name ardusimple)(type KiCad)(uri ${KIPRJMOD}/lib/kicad-libraries/footprints/ardusimple.pretty)(options "")(descr ""))
+  (lib (name other)(type KiCad)(uri ${KIPRJMOD}/lib/kicad-libraries/footprints/other.pretty)(options "")(descr ""))
+  (lib (name pololu)(type KiCad)(uri ${KIPRJMOD}/lib/kicad-libraries/footprints/pololu.pretty)(options "")(descr ""))
 )

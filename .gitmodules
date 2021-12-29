@@ -1,3 +1,6 @@
 [submodule "Software/OpenLog"]
 	path = Software/OpenLog
 	url = https://github.com/sparkfun/OpenLog.git
+[submodule "PCB/lib/kicad-libraries"]
+	path = PCB/lib/kicad-libraries
+	url = https://github.com/AndersonRayner/kicad-libraries.git

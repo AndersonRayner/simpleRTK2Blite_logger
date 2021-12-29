@@ -105,10 +105,6 @@
     (uvia_drill 0.1)
     (add_net Earth)
     (add_net "Net-(J2-Pad1)")
-    (add_net "Net-(U2-Pad1)")
-    (add_net "Net-(U2-Pad2)")
-    (add_net "Net-(U2-Pad3)")
-    (add_net "Net-(U2-Pad6)")
   )
 
   (net_class Power ""
@@ -243,7 +239,7 @@
     (pad 2 thru_hole circle (at -10.176 -10.281 180) (size 1.008 1.008) (drill 0.5) (layers *.Cu *.Mask))
     (pad 5 thru_hole circle (at -10.176 -16.281 180) (size 1.008 1.008) (drill 0.5) (layers *.Cu *.Mask))
     (pad 6 thru_hole circle (at -10.176 -18.281 180) (size 1.008 1.008) (drill 0.5) (layers *.Cu *.Mask))
-    (model ${KIPRJMOD}/../lib/kicad/3D_models/simpleRTK2Blite.STEP
+    (model ${KIPRJMOD}/lib/kicad-libraries/3D_models/simpleRTK2Blite.STEP
       (offset (xyz 0.8 -12.65 4.54))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -384,12 +380,7 @@
       (net 2 Earth))
     (pad "" thru_hole circle (at -8 10) (size 1.4 1.4) (drill 1) (layers *.Cu *.Mask))
     (pad "" thru_hole circle (at 3 10) (size 1.4 1.4) (drill 1) (layers *.Cu *.Mask))
-    (model ${KISYS3DMOD}/Connector_AMASS.3dshapes/AMASS_XT30PW-M_1x02_P2.50mm_Horizontal.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz -10 0 0))
-    )
-    (model C:/Users/matt/Documents/AFA/PCBs/lib/kicad/3D_models/XT30PW_male.STEP
+    (model ${KIPRJMOD}/lib/kicad-libraries/3D_models/XT30PW_male.STEP
       (offset (xyz -2.5 4 2.5))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 180))
@@ -417,7 +408,7 @@
       (net 1 +BATT))
     (pad 1 thru_hole circle (at -3.81 -1.27) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask)
       (net 1 +BATT))
-    (model C:/Users/matt/Documents/AFA/PCBs/lib/kicad/3D_models/Pololu_D24V5Fx.STEP
+    (model ${KIPRJMOD}/lib/kicad-libraries/3D_models/Pololu_D24V5Fx.STEP
       (offset (xyz 0 0 2.54))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -445,7 +436,7 @@
     (pad 3 thru_hole circle (at -1.27 0 180) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
     (pad 2 thru_hole circle (at -3.81 0 180) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
     (pad 1 thru_hole circle (at -6.35 0 180) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
-    (model C:/Users/matt/Documents/AFA/PCBs/lib/kicad/3D_models/Sparkfun_OpenLog.STEP
+    (model ${KIPRJMOD}/lib/kicad-libraries/3D_models/Sparkfun_OpenLog.STEP
       (offset (xyz 0 -1.27 2.54))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))

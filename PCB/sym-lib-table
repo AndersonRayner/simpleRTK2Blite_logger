@@ -1,3 +1,6 @@
 (sym_lib_table
-  (lib (name ARCL)(type Legacy)(uri C:/Users/matt/Documents/AFA/PCBs/lib/kicad/libraries/ARCL.lib)(options "")(descr ""))
+  (lib (name ardusimple)(type Legacy)(uri ${KIPRJMOD}/lib/kicad-libraries/libraries/ardusimple.lib)(options "")(descr ""))
+  (lib (name simpleRTK_logger-rescue)(type Legacy)(uri ${KIPRJMOD}/simpleRTK_logger-rescue.lib)(options "")(descr ""))
+  (lib (name pololu)(type Legacy)(uri ${KIPRJMOD}/lib/kicad-libraries/libraries/pololu.lib)(options "")(descr ""))
+  (lib (name other)(type Legacy)(uri ${KIPRJMOD}/lib/kicad-libraries/libraries/other.lib)(options "")(descr ""))
 )

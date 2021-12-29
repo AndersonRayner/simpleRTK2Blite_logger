@@ -14,34 +14,34 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ARCL:Pololu_D24V5Fx U3
+L pololu:Pololu_D24V5Fx U3
 U 1 1 5FDAB86B
 P 5050 6000
 F 0 "U3" H 5075 6420 50  0000 C CNN
 F 1 "Pololu_D24V5Fx" H 5075 6329 50  0000 C CNN
-F 2 "ARCL:Pololu_D24V5Fx" H 5050 5600 50  0001 C CNN
+F 2 "pololu:Pololu_D24V5Fx_THT" H 5050 5600 50  0001 C CNN
 F 3 "" H 5050 5600 50  0001 C CNN
 	1    5050 6000
 	1    0    0    -1  
 $EndComp
 $Comp
-L ARCL:simpleRTK2blite U1
+L ardusimple:simpleRTK2blite U1
 U 1 1 5FDABC20
 P 3600 4400
 F 0 "U1" H 3600 4130 50  0000 C CNN
 F 1 "simpleRTK2blite" H 3600 4221 50  0000 C CNN
-F 2 "ARCL:simpleRTK2blite_THT" H 3600 4750 50  0001 C CNN
+F 2 "ardusimple:simpleRTK2blite_THT" H 3600 4750 50  0001 C CNN
 F 3 "" H 3600 4750 50  0001 C CNN
 	1    3600 4400
 	-1   0    0    1   
 $EndComp
 $Comp
-L ARCL:OpenLog U2
+L other:OpenLog U2
 U 1 1 5FDAC861
 P 5400 3950
 F 0 "U2" H 5628 4396 50  0000 L CNN
 F 1 "OpenLog" H 5628 4305 50  0000 L CNN
-F 2 "ARCL:OpenLog" H 5400 3950 50  0001 C CNN
+F 2 "other:OpenLog" H 5400 3950 50  0001 C CNN
 F 3 "" H 5400 3950 50  0001 C CNN
 	1    5400 3950
 	1    0    0    1   
